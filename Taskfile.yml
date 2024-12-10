@@ -1,0 +1,15 @@
+version: 3
+tasks:
+  default:
+    cmds:
+      - task: env
+  test:
+    cmds:
+      - echo "We did it."
+  env:
+    cmds:
+      - direnv reload
+      - nix-direnv-reload
+  repl:
+    cmds:
+      - nixos-rebuild repl --flake . --show-trace
